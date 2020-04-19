@@ -3,7 +3,7 @@
 
 A basic Spring Boot Project with Spring Security and JWT.
 
-##Database script
+## Database script
 ```
 CREATE TABLE `user_account` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
