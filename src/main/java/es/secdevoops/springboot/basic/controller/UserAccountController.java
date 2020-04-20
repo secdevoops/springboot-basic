@@ -45,7 +45,7 @@ public class UserAccountController {
 	}
 	
 	@PostMapping("/registeradmin")
-	//@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public void registerAdmin(@RequestBody UserAccountDTO userAccountDTO) {
 		UserAccount userAccount = UserAccountMapper.toUserAccount(userAccountDTO);
 		userAccount.setPassword(bCryptPasswordEncoder.encode(userAccount.getPassword()));
