@@ -42,7 +42,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	    	.authorizeRequests()
 				.antMatchers(HttpMethod.POST, SecurityConstants.LOGIN_URL).permitAll()
 				.antMatchers(HttpMethod.POST, SecurityConstants.REGISTER_URL).permitAll()
-				.antMatchers(HttpMethod.POST, SecurityConstants.REGISTER_ADMIN_URL).permitAll()
+				//.antMatchers(HttpMethod.POST, SecurityConstants.REGISTER_ADMIN_URL).permitAll() //discoment only to create first time an admin user. Then, comment it again
 				.antMatchers("/",
 						"/swagger-ui.html",
 						"/swagger-ui/**",

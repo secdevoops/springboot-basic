@@ -47,4 +47,11 @@ public class UserAccount {
 		joinColumns = @JoinColumn(name = "user_id"), 
 		inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private List<Role> roles;
+	
+	public UserAccount() {
+		this.enabled = true;
+		this.accountNonExpired = true;
+		this.credentialsNonExpired = true;
+		this.accountNonLocked = true;
+	}
 }

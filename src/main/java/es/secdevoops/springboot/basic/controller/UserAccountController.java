@@ -34,7 +34,6 @@ public class UserAccountController {
 	public void register(@RequestBody UserAccountDTO userAccountDTO) {
 		UserAccount userAccount = UserAccountMapper.toUserAccount(userAccountDTO);
 		userAccount.setPassword(bCryptPasswordEncoder.encode(userAccount.getPassword()));
-		userAccount.setEnabled(true);
 		userAccount.setRoles(new ArrayList<Role>());
 		userAccount.getRoles().add(roleRepository.findByRolename(Role.USER_ROLE));
 		try {
@@ -49,7 +48,6 @@ public class UserAccountController {
 	public void registerAdmin(@RequestBody UserAccountDTO userAccountDTO) {
 		UserAccount userAccount = UserAccountMapper.toUserAccount(userAccountDTO);
 		userAccount.setPassword(bCryptPasswordEncoder.encode(userAccount.getPassword()));
-		userAccount.setEnabled(true);
 		userAccount.setRoles(new ArrayList<Role>());
 		userAccount.getRoles().add(roleRepository.findByRolename(Role.ADMIN_ROLE));
 		try {
